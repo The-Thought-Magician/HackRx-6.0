@@ -1,0 +1,83 @@
+# Core Dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+python-multipart==0.0.6
+
+# AI and ML Dependencies
+openai==1.3.0
+anthropic==0.7.8
+langchain==0.0.340
+langchain-openai==0.0.2
+langchain-community==0.0.10
+langsmith==0.0.69
+
+# OpenAI Agents SDK (when available, currently using swarm as proxy)
+openai-swarm==0.1.0
+
+# Document Processing
+kreuzberg==0.3.2
+pymupdf==1.23.8
+unstructured[all-docs]==0.11.6
+python-docx==0.8.11
+pypdf2==3.0.1
+
+# Vector Database and Search
+qdrant-client==1.7.0
+weaviate-client==3.25.3
+faiss-cpu==1.7.4
+chromadb==0.4.17
+
+# Knowledge Graph
+neo4j==5.15.0
+networkx==3.2.1
+graphiti-core==0.3.0
+py2neo==2021.2.3
+
+# Temporal Knowledge Graphs (Graphiti integration)
+graphiti==0.1.0
+
+# Embeddings and Vector Operations
+sentence-transformers==2.2.2
+numpy==1.24.3
+scipy==1.11.4
+
+# Caching and Storage
+redis==5.0.1
+sqlalchemy==2.0.23
+alembic==1.13.0
+
+# Async Operations
+asyncio==3.4.3
+aiofiles==23.2.1
+httpx==0.25.2
+
+# Configuration Management
+python-dotenv==1.0.0
+pydantic-settings==2.1.0
+
+# Security
+cryptography==41.0.8
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Monitoring and Observability
+prometheus-client==0.19.0
+structlog==23.2.0
+sentry-sdk[fastapi]==1.38.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+httpx==0.25.2
+factory-boy==3.3.0
+
+# Data Processing
+pandas==2.1.4
+polars==0.19.19
+
+# Utilities
+click==8.1.7
+rich==13.7.0
+typer==0.9.0

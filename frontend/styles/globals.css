@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 12px;
+  --chart: #0F172A;
+  
+  /* Insurance Professional Color Palette */
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  
+  /* Card & Surface Colors with Glassmorphism */
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+  --card-glass: 255 255 255 / 0.8;
+  --popover: 255 255 255;
+  --popover-foreground: 15 23 42;
+  
+  /* Professional Insurance Blue Scheme */
+  --primary: 59 130 246;  /* Modern professional blue */
+  --primary-foreground: 248 250 252;
+  --primary-soft: 219 234 254;  /* Light blue for accents */
+  
+  /* Security Green for Success States */
+  --success: 34 197 94;
+  --success-foreground: 248 250 252;
+  --success-soft: 220 252 231;
+  
+  /* Trust Navy for Critical Elements */
+  --trust: 30 58 138;
+  --trust-foreground: 248 250 252;
+  
+  /* Warning & Error Colors */
+  --warning: 245 158 11;
+  --warning-foreground: 15 23 42;
+  --destructive: 239 68 68;
+  --destructive-foreground: 248 250 252;
+  
+  --secondary: 241 245 249;
+  --secondary-foreground: 15 23 42;
+  --accent: 226 232 240;
+  --accent-foreground: 15 23 42;
+  
+  --border: 226 232 240;
+  --input: 226 232 240;
+  --ring: 59 130 246;
+  
+  /* Enhanced Chart Colors */
+  --chart-1: 59 130 246;
+  --chart-2: 34 197 94;
+  --chart-3: 245 158 11;
+  --chart-4: 239 68 68;
+  --chart-5: 147 51 234;
+  
+  /* Glass & Backdrop Effects */
+  --glass-bg: 255 255 255 / 0.7;
+  --glass-border: 255 255 255 / 0.2;
+  --backdrop-blur: blur(12px);
+  
+  /* Shadow System */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-glass: 0 8px 32px rgb(59 130 246 / 0.12);
+}
+
+:root.dark {
+  /* Dark Mode Insurance Professional */
+  --background: 2 6 23;
+  --foreground: 248 250 252;
+  --muted: 15 23 42;
+  --muted-foreground: 148 163 184;
+  
+  /* Dark Glass Cards */
+  --card: 15 23 42;
+  --card-foreground: 248 250 252;
+  --card-glass: 15 23 42 / 0.8;
+  --popover: 15 23 42;
+  --popover-foreground: 248 250 252;
+  
+  /* Dark Mode Professional Colors */
+  --primary: 96 165 250;
+  --primary-foreground: 15 23 42;
+  --primary-soft: 30 58 138;
+  
+  --success: 74 222 128;
+  --success-foreground: 15 23 42;
+  --success-soft: 20 83 45;
+  
+  --trust: 147 197 253;
+  --trust-foreground: 15 23 42;
+  
+  --warning: 251 191 36;
+  --warning-foreground: 15 23 42;
+  --destructive: 248 113 113;
+  --destructive-foreground: 15 23 42;
+  
+  --secondary: 30 41 59;
+  --secondary-foreground: 248 250 252;
+  --accent: 51 65 85;
+  --accent-foreground: 248 250 252;
+  
+  --border: 51 65 85;
+  --input: 51 65 85;
+  --ring: 96 165 250;
+  
+  /* Dark Chart Colors */
+  --chart-1: 96 165 250;
+  --chart-2: 74 222 128;
+  --chart-3: 251 191 36;
+  --chart-4: 248 113 113;
+  --chart-5: 196 181 253;
+  
+  /* Dark Glass Effects */
+  --glass-bg: 15 23 42 / 0.6;
+  --glass-border: 148 163 184 / 0.1;
+  --shadow-glass: 0 8px 32px rgb(0 0 0 / 0.3);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-variation-settings: 'opsz' 14;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  color-scheme: unset !important;
+}
+
+/* Professional Insurance Theme Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: hsl(var(--foreground));
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+option {
+  color: black;
+}
+
+p {
+  letter-spacing: 0px;
+}
+
+img {
+  pointer-events: none;
+}
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #09090B;
+}
+
+::selection {
+  color: white;
+  background: #09090B;
+}
+
+input.defaultCheckbox {
+  color: white;
+}
+
+input.defaultCheckbox::before {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.66662 10.115L12.7946 3.98633L13.7379 4.92899L6.66662 12.0003L2.42395 7.75766L3.36662 6.81499L6.66662 10.115Z' fill='white'/%3E%3C/svg%3E%0A");
+  fill: currentColor;
+  opacity: 0;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+}
+
+input.defaultCheckbox::before path {
+  fill: currentColor;
+}
+
+input:checked.defaultCheckbox::before {
+  opacity: 1;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+      }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Glassmorphism & Modern Effects */
+.glass {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card)) 0%,
+    hsl(var(--card) / 0.8) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border) / 0.2);
+  box-shadow: 
+    0 8px 32px hsl(var(--foreground) / 0.08),
+    inset 0 1px 0 hsl(var(--foreground) / 0.05);
+}
+
+.professional-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--trust)) 50%,
+    hsl(var(--primary)) 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient-flow 6s ease infinite;
+}
+
+.insurance-shadow {
+  box-shadow: 
+    0 4px 16px hsl(var(--primary) / 0.1),
+    0 8px 32px hsl(var(--foreground) / 0.08);
+}
+
+.success-glow {
+  box-shadow: 0 0 20px hsl(var(--success) / 0.3);
+}
+
+.trust-glow {
+  box-shadow: 0 0 20px hsl(var(--trust) / 0.3);
+}
+
+/* Interactive Elements */
+.interactive-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-scale:hover {
+  transform: scale(1.02);
+}
+
+.interactive-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 24px hsl(var(--foreground) / 0.12),
+    0 4px 8px hsl(var(--foreground) / 0.08);
+}
+
+/* Professional Loading States */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.pulse-professional {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Typography Enhancements */
+.text-professional {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 1, 'tnum' 0, 'onum' 1, 'lnum' 0;
+  letter-spacing: -0.025em;
+}
+
+.text-display {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Staggered Animation Delays */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Enhanced focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}
